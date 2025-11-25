@@ -58,6 +58,14 @@ public class Poll {
                     .and();
             return this;
         }
+
+        public PollQuestion.PollQuestionBuilder notMandatoryQuestion(String title) {
+            return new PollQuestion.PollQuestionBuilder(this)
+                    .withTitle(title)
+                    .withMinAnswers(0)
+                    .withMaxAnswers(1);
+        }
+
         public Poll build(){
             return new Poll(this);
         }

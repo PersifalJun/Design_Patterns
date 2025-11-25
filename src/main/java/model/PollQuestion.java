@@ -14,6 +14,14 @@ public class PollQuestion {
         this.minAnswers = questionBuilder.minAnswers;
         this.maxAnswers = questionBuilder.maxAnswers;
         this.answers = questionBuilder.answers;
+
+        if (minAnswers < 0
+                || maxAnswers <= 0
+                || minAnswers > maxAnswers
+                || minAnswers >= answers.size()
+        ) {
+            throw new IllegalArgumentException("Illegal max or min answers count");
+        }
     }
 
     public String getTitle() {

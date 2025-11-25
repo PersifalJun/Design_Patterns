@@ -21,9 +21,7 @@ public class Main {
                 .withAnswerVariant("C++")
                 .and()
 
-                .pollQuestion("Do you like your job?")
-                .withMinAnswers(0)
-                .withMaxAnswers(1)
+                .notMandatoryQuestion("Do you like your job?")
                 .withAnswerVariant("Who knows..")
                 .withAnswerVariant("Of course")
                 .and()

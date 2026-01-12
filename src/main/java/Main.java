@@ -1,4 +1,4 @@
-import model.*;
+import poll.*;
 
 public class Main {
 
@@ -41,11 +41,11 @@ public class Main {
 
     }
     private static void printPoll(Poll poll) {
-        System.out.println("Опрос: " + poll.getPollName());
+        System.out.println("Опрос: " + poll.pollName());
         int i = 1;
-        for (PollQuestion question : poll.getPollQuestionList()) {
-            System.out.println(i++ + ". Вопрос: " + question.getTitle());
-            for (String answer : question.getAnswers()) {
+        for (PollQuestion question : poll.pollQuestionList()) {
+            System.out.println(i++ + ". Вопрос: " + question.title());
+            for (String answer : question.answers()) {
                 System.out.println("   - " + answer);
             }
             System.out.println();

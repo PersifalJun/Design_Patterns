@@ -1,6 +1,6 @@
 package poll.strategy.analyze;
 
-import poll.PollFillingData;
+import poll.poll_data.PollFillingData;
 import poll.strategy.statistics.QuestionStatistics;
 
 import java.util.HashMap;

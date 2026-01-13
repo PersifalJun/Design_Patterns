@@ -1,6 +1,6 @@
 package poll.builder;
 
-import poll.PollQuestion;
+import poll.question.PollQuestion;
 
 import java.util.ArrayList;
 import java.util.List;

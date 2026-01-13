@@ -20,7 +20,6 @@ public class MostFrequentAnswerStrategy implements AnalyzeStrategy {
                 if (mostFrequentQuestionVotes == -1 || mostFrequentQuestionVotes < questionVotes.getValue()) {
                     mostFrequentQuestionVotes = questionVotes.getValue();
                     mostFrequentQuestionAnswer = questionVotes.getKey();
-
                 }
             }
             stringBuilder.append("Question: ").append(statistics.questionTitle()).append("\n")

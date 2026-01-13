@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - Pattern_Builder</name>
   <url>http://maven.apache.org</url>
+
     <build>
         <plugins>
             <plugin>

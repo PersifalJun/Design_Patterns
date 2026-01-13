@@ -1,4 +1,4 @@
-package poll;
+package poll.question;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package poll;
+package poll.poll_data;
+
+import poll.response.PollQuestionResponse;
 
 import java.util.List;
 

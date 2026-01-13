@@ -1,6 +1,7 @@
 package poll.proxy;
 
 import poll.poll_data.PollFillingData;
+import poll.strategy.analyze.AnalyzeStrategy;
 import poll.strategy.analyze.PollAnalyzer;
 
 import java.util.List;
@@ -19,14 +20,24 @@ public class PollAnalyzerProxy extends PollAnalyzer {
         this.currentStrategy = extractCurrentStrategyName();
     }
 
+    @Override
     public void analyzePoll(List<PollFillingData> pollFillingDataList){
         System.out.println(STR."*****Starting analyze poll by strategy: \{currentStrategy}");
+        System.out.println();
         System.out.println("... HERE ANALYZE RESULTS ...");
+        System.out.println();
         var startTime = System.currentTimeMillis();
         delegate.analyzePoll(pollFillingDataList);
         var endTime = System.currentTimeMillis();
         var totalAnalyzeTimeMS = endTime - startTime;
         System.out.println(STR."*****Ending analyze poll by strategy: \{currentStrategy},totalAnalyzeTimeMS: \{totalAnalyzeTimeMS}");
+        System.out.println();
+    }
+
+    @Override
+    public void changeAnalyzeStrategy(AnalyzeStrategy analyzerStrategy) {
+        delegate.changeAnalyzeStrategy(analyzerStrategy);
+        currentStrategy = analyzerStrategy.getClass().getSimpleName();
     }
 
     private String extractCurrentStrategyName() {
@@ -40,6 +51,4 @@ public class PollAnalyzerProxy extends PollAnalyzer {
            return "Unknown strategy";
        }
     }
-
-
 }

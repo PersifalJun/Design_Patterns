@@ -32,6 +32,5 @@ public class FullCountStrategy implements AnalyzeStrategy {
             stringBuilder.append("\n");
         }
         System.out.print(stringBuilder);
-
     }
 }

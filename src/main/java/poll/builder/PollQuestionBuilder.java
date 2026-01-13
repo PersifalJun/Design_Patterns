@@ -12,7 +12,6 @@ public class PollQuestionBuilder {
     private int maxAnswers;
     private final List<String> answers;
 
-
     public PollQuestionBuilder(PollBuilder poolBuilder) {
         this.poolBuilder = poolBuilder;
         this.title = "EmptyTitle";

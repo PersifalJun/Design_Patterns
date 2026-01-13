@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 public class PollAnalyzer {
-    private AnalyzeStrategy strategy;
+    private AnalyzeStrategy analyzerStrategy;
 
     public PollAnalyzer(AnalyzeStrategy strategy) {
-        this.strategy = strategy;
+        this.analyzerStrategy = strategy;
     }
 
     public void changeAnalyzeStrategy(AnalyzeStrategy strategy) {
-        this.strategy = strategy;
+        this.analyzerStrategy = strategy;
     }
 
     public void analyzePoll(List<PollFillingData> pollFillingDataList) {
@@ -44,7 +44,7 @@ public class PollAnalyzer {
                         questionResponse.selectedVariants().size()
                 );
             }
-            strategy.makeAnalyze(questionStatisticsMap.values().stream().toList());
         }
+        analyzerStrategy.makeAnalyze(questionStatisticsMap.values().stream().toList());
     }
 }
